@@ -1,0 +1,71 @@
+@font-face {
+    font-weight: 400;
+    font-family: "Roboto";
+    font-style: normal;
+    src:
+        local("Roboto"),
+        url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: "Roboto";
+    font-style: normal;
+    src:
+        local("Roboto"),
+        url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: "Roboto";
+    font-style: normal;
+    src:
+        local("Roboto"),
+        url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+%bsic-style-project {
+    font-family: "Roboto";
+    line-height: 1.5;
+    color: #cacaca;
+    background-color: #08020d;
+}
+
+h1,
+h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+$text-size: (
+    l: 60,
+    m: 38,
+    s: 30,
+    xs: 18
+);
+
+$line-heights: (
+    l: 90,
+    m: 57,
+    s: 45,
+    xs: 27
+);
+
+@mixin sizes($list) {
+    @each $status,
+    $size in $list {
+        &-#{$status} {
+            font-size: #{$size}px;
+        }
+    }
+}
+
+.fz {
+    @include sizes($text-size)
+}
+
+.lh {
+    @include sizes($line-heights)
+}
+
