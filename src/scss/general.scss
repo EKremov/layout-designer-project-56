@@ -30,7 +30,14 @@
     line-height: 1.5;
     color: #cacaca;
     background-color: #08020d;
+    margin: 0 auto;
 }
+
+%display-flex-center {
+    display: flex;
+    align-items: center;
+}
+
 
 h1,
 h2 {
@@ -42,17 +49,20 @@ $text-size: (
     l: 60,
     m: 38,
     s: 30,
-    xs: 18
+    xs: 18,
+    p: 16
 );
 
 $line-heights: (
     l: 90,
     m: 57,
     s: 45,
-    xs: 27
+    xs: 27,
+    p: 24
 );
 
 @mixin sizes($list) {
+
     @each $status,
     $size in $list {
         &-#{$status} {
@@ -61,11 +71,21 @@ $line-heights: (
     }
 }
 
-.fz {
-    @include sizes($text-size)
+@mixin indent($type, $direction:null, $size) {
+    #{$type}#{-$direction}: $size;
 }
 
-.lh {
-    @include sizes($line-heights)
+@mixin desktop {
+    $padding-top-bottom: 200px;
+    $padding-left-right: 120px;
+
+    @media (min-width: 1240px) {
+        .hero-section {
+            padding: $padding-top-bottom $padding-left-right;
+        }
+        .hero-section-form {
+            max-width: 570px;
+        }
+    }
 }
 
