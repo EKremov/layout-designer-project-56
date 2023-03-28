@@ -1,32 +1,32 @@
 @font-face {
     font-weight: 400;
-    font-family: "Roboto";
+    font-family: Roboto;
     font-style: normal;
     src:
-        local("Roboto"),
+        local(roboto),
         url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-weight: 500;
-    font-family: "Roboto";
+    font-family: Roboto;
     font-style: normal;
     src:
-        local("Roboto"),
+        local(roboto),
         url("../fonts/Roboto-Medium.ttf") format("truetype");
 }
 
 @font-face {
     font-weight: 700;
-    font-family: "Roboto";
+    font-family: Roboto;
     font-style: normal;
     src:
-        local("Roboto"),
+        local(roboto),
         url("../fonts/Roboto-Bold.ttf") format("truetype");
 }
 
 %bsic-style-project {
-    font-family: "Roboto";
+    font-family: Roboto, sans-serif;
     line-height: 1.5;
     color: #cacaca;
     background-color: #08020d;
@@ -36,8 +36,8 @@
 %display-flex-center {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
-
 
 h1,
 h2 {
@@ -45,46 +45,83 @@ h2 {
     text-transform: uppercase;
 }
 
-$text-size: (
-    l: 60,
-    m: 38,
-    s: 30,
-    xs: 18,
-    p: 16
-);
-
-$line-heights: (
-    l: 90,
-    m: 57,
-    s: 45,
-    xs: 27,
-    p: 24
-);
-
-@mixin sizes($list) {
-
-    @each $status,
-    $size in $list {
-        &-#{$status} {
-            font-size: #{$size}px;
-        }
-    }
+@mixin sizes-custom($type, $size) {
+    #{$type}: #{$size}px;
 }
 
 @mixin indent($type, $direction:null, $size) {
-    #{$type}#{-$direction}: $size;
+    #{$type}#{-$direction}: #{$size}px;
+}
+
+@mixin arial($color, $size1, $size2, $br) {
+    background-color: $color;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: #{$br}px;
+
+    @include sizes-custom(line-height, $size1);
+    @include sizes-custom(font-size, $size2);
 }
 
 @mixin desktop {
-    $padding-top-bottom: 200px;
-    $padding-left-right: 120px;
-
     @media (min-width: 1240px) {
-        .hero-section {
-            padding: $padding-top-bottom $padding-left-right;
+        .search-form-input {
+            padding: 5px 93px 5px 10px;
         }
-        .hero-section-form {
-            max-width: 570px;
+
+        .top-line-nav {
+            @include indent(margin, left, 90);
+            @include indent(margin, right, 451)
+        } 
+
+        .nav-list {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            @include indent(margin, top, 200);
+            @include indent(margin, left, 120);
+            @include indent(margin, bottom, 200);
+            @include indent(margin, right, 120);
+
+            .page-description-wrapper {
+                width: 1200px;
+                text-align: center;
+                color: $white;
+            }
+
+            h1 {
+                @include sizes-custom(font-size, 60);
+                @include sizes-custom(line-height, 90)
+            }
+
+            h2 {
+                @include sizes-custom(font-size, 38);
+                @include sizes-custom(line-height, 57)
+            }
+
+            p {
+                @include indent(margin, top, 31)
+            }
+
+            .hero-section-form {
+                input {
+                    padding: 15px 100.618px 15px 22.4px;
+                    margin-bottom: 24px;
+                }
+
+                & > input:first-child{
+                    margin-right: 20px;
+                }
+
+                .btn {
+                    padding-left: 220px;
+                    padding-right: 219px;
+                }
+            }
         }
     }
 }

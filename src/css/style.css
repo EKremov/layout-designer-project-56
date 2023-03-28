@@ -1,32 +1,33 @@
 @font-face {
   font-weight: 400;
-  font-family: "Roboto";
+  font-family: Roboto;
   font-style: normal;
-  src: local("Roboto"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  src: local(roboto), url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
   font-weight: 500;
-  font-family: "Roboto";
+  font-family: Roboto;
   font-style: normal;
-  src: local("Roboto"), url("../fonts/Roboto-Medium.ttf") format("truetype");
+  src: local(roboto), url("../fonts/Roboto-Medium.ttf") format("truetype");
 }
 @font-face {
   font-weight: 700;
-  font-family: "Roboto";
+  font-family: Roboto;
   font-style: normal;
-  src: local("Roboto"), url("../fonts/Roboto-Bold.ttf") format("truetype");
+  src: local(roboto), url("../fonts/Roboto-Bold.ttf") format("truetype");
 }
 body {
-  font-family: "Roboto";
+  font-family: Roboto, sans-serif;
   line-height: 1.5;
   color: #cacaca;
   background-color: #08020d;
   margin: 0 auto;
 }
 
-.logo, .top-line {
+.logo, .top-line, .first-section {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 h1,
@@ -35,42 +36,37 @@ h2 {
   text-transform: uppercase;
 }
 
-.fz-l {
-  font-size: 60px;
-}
-.fz-m {
-  font-size: 38px;
-}
-.fz-s {
-  font-size: 30px;
-}
-.fz-xs {
-  font-size: 18px;
-}
-.fz-p {
-  font-size: 16px;
-}
-
-.lh-l {
-  font-size: 90px;
-}
-.lh-m {
-  font-size: 57px;
-}
-.lh-s {
-  font-size: 45px;
-}
-.lh-xs {
-  font-size: 27px;
-}
-.lh-p {
-  font-size: 24px;
-}
-
 .first-section {
   background-image: url("../images/banner.png");
   background-size: cover;
   position: relative;
+}
+.first-section .nav-list-item {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 24px;
+}
+.first-section .logo > p,
+.first-section .nav-list-item {
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 16px;
+}
+.first-section .nav-list-item > a {
+  color: #fff;
+}
+.first-section .search-form-input {
+  background-color: #3C3B3D;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 50px;
+  line-height: 15px;
+  font-size: 13.3px;
+}
+.first-section .search-form-input::placeholder {
+  color: #757575;
 }
 
 .top-line {
@@ -78,10 +74,8 @@ h2 {
   top: 25px;
 }
 
-.nav-list-item {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 24px;
+.logo {
+  color: #fff;
 }
 
 .logo-icon {
@@ -102,12 +96,83 @@ h2 {
   margin-right: 16px;
 }
 
+.hero-section-form {
+  max-width: 570px;
+  margin: 0 auto;
+  margin-top: 17px;
+}
+.hero-section-form input {
+  border: 2px solid #CACACA;
+  border-radius: 3px;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  line-height: 16.41px;
+}
+.hero-section-form input::placeholder {
+  color: #fff;
+}
+.hero-section-form .btn {
+  display: block;
+  background-color: #34C176;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 5px;
+  line-height: 15px;
+  font-size: 13.3px;
+  color: #fff;
+  padding: 21px 0;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
 @media (min-width: 1240px) {
-  .hero-section {
-    padding: 200px 120px;
+  .search-form-input {
+    padding: 5px 93px 5px 10px;
   }
-  .hero-section-form {
-    max-width: 570px;
+  .top-line-nav {
+    margin-left: 90px;
+    margin-right: 451px;
+  }
+  .nav-list {
+    margin: 0;
+    padding: 0;
+  }
+  .hero-section {
+    margin-top: 200px;
+    margin-left: 120px;
+    margin-bottom: 200px;
+    margin-right: 120px;
+  }
+  .hero-section .page-description-wrapper {
+    width: 1200px;
+    text-align: center;
+    color: #fff;
+  }
+  .hero-section h1 {
+    font-size: 60px;
+    line-height: 90px;
+  }
+  .hero-section h2 {
+    font-size: 38px;
+    line-height: 57px;
+  }
+  .hero-section p {
+    margin-top: 31px;
+  }
+  .hero-section .hero-section-form input {
+    padding: 15px 100.618px 15px 22.4px;
+    margin-bottom: 24px;
+  }
+  .hero-section .hero-section-form > input:first-child {
+    margin-right: 20px;
+  }
+  .hero-section .hero-section-form .btn {
+    padding-left: 220px;
+    padding-right: 219px;
   }
 }
 

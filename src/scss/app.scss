@@ -5,35 +5,53 @@ body {
     @extend %bsic-style-project;
 }
 
-.fz {
-    @include sizes($text-size)
-}
-
-
-.lh {
-    @include sizes($line-heights)
-}
-
 .first-section {
     background-image: url('../images/banner.png');
-    //background-position: center;
+
+    // background-position: center;
+
     background-size: cover;
     position: $relative;
+
+    @extend %display-flex-center;
+
+    .nav-list-item {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 24px;
+    }
+
+    .logo > p,
+    .nav-list-item {
+        text-transform: uppercase;
+
+        @include sizes-custom(font-size, 11);
+        @include sizes-custom(line-height, 16);
+    }
+
+    .nav-list-item > a {
+        color: $white;
+    }
+
+    .search-form-input {
+        @include arial($dark, 15, 13.3, 50);
+    }
+    
+    .search-form-input::placeholder {
+        color: #757575;
+    }
 }
 
 .top-line {
     position: $absolute;
     top: 25px;
+
     @extend %display-flex-center;
 }
 
-.nav-list-item {
-    list-style-type: none;
-    display: inline-block;
-    margin-right: 24px;
-}
-
 .logo {
+    color: $white;
+
     @extend %display-flex-center;
 }
 
@@ -54,7 +72,39 @@ body {
     border: none;
 
     cursor: pointer;
-    @include indent(margin, right, 16px)
+
+    @include indent(margin, right, 16)
+}
+
+.hero-section-form {
+    max-width: 570px;
+    margin: 0 auto;
+
+    @include indent(margin, top, 17);
+
+    input {
+        border: 2px solid $dark-gery ;
+        border-radius: 3px;
+        background: transparent;
+        color: $white;
+        font-size: 14px;
+        line-height: 16.41px;
+    }
+
+    input::placeholder {
+        color: $white;
+    }
+
+    .btn {
+        display: block;
+
+        @include arial($green, 15, 13.3, 5);
+        color: $white;
+        padding: 21px 0;
+        text-align: center;
+        white-space: nowrap;
+        cursor: pointer;
+    }
 }
 
 @include desktop;
