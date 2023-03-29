@@ -1,30 +1,3 @@
-@font-face {
-    font-weight: 400;
-    font-family: Roboto;
-    font-style: normal;
-    src:
-        local(roboto),
-        url("../fonts/Roboto-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-weight: 500;
-    font-family: Roboto;
-    font-style: normal;
-    src:
-        local(roboto),
-        url("../fonts/Roboto-Medium.ttf") format("truetype");
-}
-
-@font-face {
-    font-weight: 700;
-    font-family: Roboto;
-    font-style: normal;
-    src:
-        local(roboto),
-        url("../fonts/Roboto-Bold.ttf") format("truetype");
-}
-
 %bsic-style-project {
     font-family: Roboto, sans-serif;
     line-height: 1.5;
@@ -45,12 +18,19 @@ h2 {
     text-transform: uppercase;
 }
 
+body {
+    @extend %bsic-style-project;
+    @extend %display-flex-center;
+
+    // align-items: normal;
+}
+
 @mixin sizes-custom($type, $size) {
     #{$type}: #{$size}px;
 }
 
 @mixin indent($type, $direction:null, $size) {
-    #{$type}#{-$direction}: #{$size}px;
+    #{$type}#{-$direction}: #{$size};
 }
 
 @mixin arial($color, $size1, $size2, $br) {
@@ -67,29 +47,23 @@ h2 {
 
 @mixin desktop {
     @media (min-width: 1240px) {
-        .search-form-input {
-            padding: 5px 93px 5px 10px;
-        }
-
-        .top-line-nav {
-            @include indent(margin, left, 90);
-            @include indent(margin, right, 451)
-        } 
-
         .nav-list {
             margin: 0;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-list-item {
+            list-style-type: none;
+            display: inline-block;
+            margin-right: 22px;
         }
 
         .hero-section {
-            @include indent(margin, top, 200);
-            @include indent(margin, left, 120);
-            @include indent(margin, bottom, 200);
-            @include indent(margin, right, 120);
-
             .page-description-wrapper {
                 width: 1200px;
-                text-align: center;
                 color: $white;
             }
 
@@ -104,25 +78,89 @@ h2 {
             }
 
             p {
-                @include indent(margin, top, 31)
+                @include indent(margin, top, 31px)
             }
 
             .hero-section-form {
                 input {
-                    padding: 15px 100.618px 15px 22.4px;
-                    margin-bottom: 24px;
+                    @include indent(margin, bottom, 1.5rem)
                 }
 
                 & > input:first-child{
-                    margin-right: 20px;
-                }
-
-                .btn {
-                    padding-left: 220px;
-                    padding-right: 219px;
+                    @include indent(margin, right, 1.5rem)
                 }
             }
         }
     }
 }
 
+@mixin mobile {
+    @media (max-width: 1240px) {
+        .body {
+            flex-direction: column;
+        }
+
+        .top-line,
+        .top-line-logo-section,
+        .nav-list,
+        .nav-list-item {
+           display: block;
+        }
+
+        .top-line {
+            padding: 0 20px;
+        }
+
+        .logo {
+            margin: 0;
+            justify-content: flex-start;
+        }
+
+        .top-line-nav {
+            @include indent(margin, top, 17px);
+            @include indent(margin, bottom, 18px);
+        }
+
+        .search-form-input {
+            width: 100%;
+        }
+        
+        .first-section {
+            width: 100%;
+            padding: 0 20px;
+
+            .nav-list {
+                margin: 0;
+                padding: 0;
+            }
+
+            .hero-section {
+                margin: 200px 0;
+            
+                h1 {
+                    @include sizes-custom(font-size, 30);
+                    @include sizes-custom(line-height, 45);
+                }
+            
+                h2 {
+                    @include sizes-custom(font-size, 18);
+                    @include sizes-custom(line-height, 27);
+                }
+            
+                p {
+                    @include indent(margin, top, 16px);
+                    @include indent(margin, bottom, 16px);
+                }
+
+                input {
+                    width: 100%;
+                    
+                    @include indent(margin, bottom, 24px);
+                }
+            }
+        }
+
+
+        
+    }
+}    

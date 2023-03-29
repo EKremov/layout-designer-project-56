@@ -1,25 +1,21 @@
+@import "reset";
 @import "variables";
 @import "general";
-
-body {
-    @extend %bsic-style-project;
-}
 
 .first-section {
     background-image: url('../images/banner.png');
 
-    // background-position: center;
+    background-position: center;
 
     background-size: cover;
     position: $relative;
 
-    @extend %display-flex-center;
+    width: 1200px;
+    padding: 0 20px;
 
-    .nav-list-item {
-        list-style-type: none;
-        display: inline-block;
-        margin-right: 24px;
-    }
+    box-sizing: content-box;
+
+    @extend %display-flex-center;
 
     .logo > p,
     .nav-list-item {
@@ -29,28 +25,48 @@ body {
         @include sizes-custom(line-height, 16);
     }
 
+    .nav-list-item:last-of-type {
+        margin-right: 0;
+    }
+
     .nav-list-item > a {
         color: $white;
     }
 
     .search-form-input {
         @include arial($dark, 15, 13.3, 50);
+        padding: 5px 93px 5px 10px;
     }
     
     .search-form-input::placeholder {
         color: #757575;
+    }
+
+    .hero-section {
+        @include indent(margin, top, 200px);
+        @include indent(margin, left, 120px);
+        @include indent(margin, bottom, 200px);
+        @include indent(margin, right, 120px);
     }
 }
 
 .top-line {
     position: $absolute;
     top: 25px;
+    padding: 0 20px;
 
+    @extend %display-flex-center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.top-line-logo-section {
     @extend %display-flex-center;
 }
 
 .logo {
     color: $white;
+    margin-right: 90px;
 
     @extend %display-flex-center;
 }
@@ -73,16 +89,19 @@ body {
 
     cursor: pointer;
 
-    @include indent(margin, right, 16)
+    @include indent(margin, right, 16px)
 }
 
 .hero-section-form {
     max-width: 570px;
     margin: 0 auto;
 
-    @include indent(margin, top, 17);
+    @include indent(margin, top, 17px);
 
     input {
+        min-width: 270px;
+        padding-left: 20px;
+        min-height: 50px;
         border: 2px solid $dark-gery ;
         border-radius: 3px;
         background: transparent;
@@ -100,12 +119,17 @@ body {
 
         @include arial($green, 15, 13.3, 5);
         color: $white;
-        padding: 21px 0;
+        padding: 20px 30px;
         text-align: center;
-        white-space: nowrap;
+        width: 100%;
         cursor: pointer;
     }
 }
 
+.page-description-wrapper {
+    text-align: center;
+}
+
 @include desktop;
+@include mobile;
 

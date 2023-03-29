@@ -1,3 +1,30 @@
+@font-face {
+    font-weight: 400;
+    font-family: Roboto;
+    font-style: normal;
+    src:
+        local(roboto),
+        url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: Roboto;
+    font-style: normal;
+    src:
+        local(roboto),
+        url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: Roboto;
+    font-style: normal;
+    src:
+        local(roboto),
+        url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+
 $balck: #08020D;
 $grey: #E0E0E0;
 $dark-gery: #CACACA;
