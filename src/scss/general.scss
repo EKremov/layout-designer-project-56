@@ -6,25 +6,6 @@
     margin: 0 auto;
 }
 
-%display-flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1,
-h2 {
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-body {
-    @extend %bsic-style-project;
-    @extend %display-flex-center;
-
-    // align-items: normal;
-}
-
 @mixin sizes-custom($type, $size) {
     #{$type}: #{$size}px;
 }
@@ -33,53 +14,20 @@ body {
     #{$type}#{-$direction}: #{$size};
 }
 
-@mixin arial($color, $size1, $size2, $br) {
+@mixin arial($color, $br) {
     background-color: $color;
-    text-transform: uppercase;
     font-family: Arial, sans-serif;
     font-style: normal;
-    font-weight: 400;
     border-radius: #{$br}px;
-
-    @include sizes-custom(line-height, $size1);
-    @include sizes-custom(font-size, $size2);
 }
 
 @mixin desktop {
     @media (min-width: 1240px) {
-        .nav-list {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-list-item {
-            list-style-type: none;
-            display: inline-block;
-            margin-right: 22px;
-        }
 
         .hero-section {
-            .page-description-wrapper {
-                width: 1200px;
-                color: $white;
-            }
 
-            h1 {
-                @include sizes-custom(font-size, 60);
-                @include sizes-custom(line-height, 90)
-            }
 
-            h2 {
-                @include sizes-custom(font-size, 38);
-                @include sizes-custom(line-height, 57)
-            }
 
-            p {
-                @include indent(margin, top, 31px)
-            }
 
             .hero-section-form {
                 input {
@@ -104,7 +52,9 @@ body {
         .top-line-logo-section,
         .nav-list,
         .nav-list-item {
-           display: block;
+            &.d-b{
+                display: block;
+            }
         }
 
         .top-line {
@@ -154,7 +104,7 @@ body {
 
                 input {
                     width: 100%;
-                    
+
                     @include indent(margin, bottom, 24px);
                 }
             }
