@@ -4,6 +4,9 @@
 
 body {
     @extend %bsic-style-project;
+    background-image: url('../images/banner.png');
+    background-position: center;
+    background-size: cover;
 }
 
 h1,
@@ -104,14 +107,19 @@ h2 {
     margin-top: 31px;
 }
 
+.mr-1-5 {
+    margin-right: 1.5rem;
+}
+
+.mb-1-5 {
+    margin-bottom: 1.5rem;
+}
+
 .mb-200 {
     margin-bottom: 200px;
 }
 
 .first-section {
-    background-image: url('../images/banner.png');
-    background-position: center;
-    background-size: cover;
     width: 1200px;
     box-sizing: content-box;
 }
@@ -159,6 +167,7 @@ input::placeholder,
 .fs-38 {
     font-size: 38px;
 }
+
 
 .fs-11 {
     font-size: 11px;
@@ -213,8 +222,6 @@ input::placeholder,
 }
 
 .btn {
-    display: block;
-
     @include arial($green, 5);
     padding: 20px 30px;
     width: 100%;

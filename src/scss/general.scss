@@ -24,41 +24,17 @@
 @mixin desktop {
     @media (min-width: 1240px) {
 
-        .hero-section {
-
-
-
-
-            .hero-section-form {
-                input {
-                    @include indent(margin, bottom, 1.5rem)
-                }
-
-                & > input:first-child{
-                    @include indent(margin, right, 1.5rem)
-                }
-            }
-        }
     }
 }
 
 @mixin mobile {
     @media (max-width: 1240px) {
-        .body {
-            flex-direction: column;
+        .mob-block {
+            display: block;
         }
 
-        .top-line,
-        .top-line-logo-section,
-        .nav-list,
-        .nav-list-item {
-            &.d-b{
-                display: block;
-            }
-        }
-
-        .top-line {
-            padding: 0 20px;
+        .mr-0 {
+            margin-right: 0;
         }
 
         .logo {
@@ -66,51 +42,65 @@
             justify-content: flex-start;
         }
 
-        .top-line-nav {
-            @include indent(margin, top, 17px);
-            @include indent(margin, bottom, 18px);
+        .mt-17 {
+            margin-top: 17px
+        }
+
+        .mb-18 {
+            margin-bottom: 18px;
+        }
+
+        .mb-24 {
+            margin-bottom: 24px;
         }
 
         .search-form-input {
             width: 100%;
         }
-        
-        .first-section {
-            width: 100%;
-            padding: 0 20px;
 
-            .nav-list {
-                margin: 0;
-                padding: 0;
-            }
+        .fs-30 {
+            font-size: 30px;
+        }
 
-            .hero-section {
-                margin: 200px 0;
-            
-                h1 {
-                    @include sizes-custom(font-size, 30);
-                    @include sizes-custom(line-height, 45);
-                }
-            
-                h2 {
-                    @include sizes-custom(font-size, 18);
-                    @include sizes-custom(line-height, 27);
-                }
-            
-                p {
-                    @include indent(margin, top, 16px);
-                    @include indent(margin, bottom, 16px);
-                }
+        .fs-18 {
+            font-size: 18px;
+        }
 
-                input {
-                    width: 100%;
+        .line-h-45 {
+            line-height: 45px
+        }
 
-                    @include indent(margin, bottom, 24px);
-                }
+        .line-h-27 {
+            line-height: 27px
+        }
+
+        .mtb-16 {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .mtb-200 {
+            margin-top: 200px;
+            margin-bottom: 200px;
+        }
+
+        .mlr-0 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .hero-section {
+            input {
+                width: 100%;
             }
         }
 
+        .page-description-wrapper {
+            width: 100%;
+        }
 
-        
+        .first-section {
+            width: 100%;
+        }
     }
 }    
