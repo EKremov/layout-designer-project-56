@@ -4,19 +4,28 @@
 
 body {
     @extend %bsic-style-project;
+}
+
+header {
     background-image: url('../images/banner.png');
     background-position: center;
     background-size: cover;
+    width: 100%;
 }
 
 h1,
 h2 {
     font-weight: bold;
     text-transform: uppercase;
+    color: $white;
 }
 
 .d-flex {
     display: flex;
+}
+
+.flex-der-col {
+    flex-direction: column;
 }
 
 .jc-center {
@@ -71,6 +80,23 @@ h2 {
     padding-right: 93px;
 }
 
+.pt-100 {
+    padding-top: 101px;
+}
+
+.pl-16 {
+    padding-left: 16px;
+}
+
+.plr-1-5 {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.pt-1-5 {
+    padding-top: 1.5rem;
+}
+
 .m-0 {
     margin: 0px;
 }
@@ -79,8 +105,17 @@ h2 {
     margin-right: 16px;
 }
 
+.mtb-64 {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
 .mr-20 {
     margin-right: 20px;
+}
+
+.mr-50 {
+    margin-right: 50px;
 }
 
 .mr-90 {
@@ -103,6 +138,14 @@ h2 {
     margin-bottom: 17px;
 }
 
+.mb-45 {
+    margin-bottom: 45px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
 .mt-31 {
     margin-top: 31px;
 }
@@ -119,7 +162,7 @@ h2 {
     margin-bottom: 200px;
 }
 
-.first-section {
+.conteiner {
     width: 1200px;
     box-sizing: content-box;
 }
@@ -168,6 +211,9 @@ input::placeholder,
     font-size: 38px;
 }
 
+.fs-24 {
+    font-size: 24px;
+}
 
 .fs-11 {
     font-size: 11px;
@@ -179,6 +225,14 @@ input::placeholder,
 
 .fs-14 {
     font-size: 14px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
+.fs-64 {
+    font-size: 64px;
 }
 
 .logo > p,
@@ -197,7 +251,7 @@ input::placeholder,
 }
 
 .search-form-input {
-    @include arial($dark, 50);
+    @include arial(50);
 }
 
 .search-form-input::placeholder {
@@ -222,10 +276,18 @@ input::placeholder,
 }
 
 .btn {
-    @include arial($green, 5);
+    @include arial(5);
     padding: 20px 30px;
     width: 100%;
     cursor: pointer;
+}
+
+.btn-green {
+    background-color: $green;
+}
+
+.btn-transparent {
+    background: transparent;
 }
 
 .block {
@@ -233,25 +295,114 @@ input::placeholder,
 }
 
 .line-h-90 {
-    line-height: 90px
+    line-height: 90px;
+}
+
+.line-h-1em {
+    line-height: 1em;
+}
+
+.line-h-1-5em {
+    line-height: 1.5em;
 }
 
 .line-h-57 {
-    line-height: 57px
+    line-height: 57px;
 }
 
 .line-h-15 {
-    line-height: 15px
+    line-height: 15px;
 }
 
 .line-h-16 {
-    line-height: 16px
+    line-height: 16px;
+}
+
+.line-h-19 {
+    line-height: 19px;
+}
+
+.line-h-36 {
+    line-height: 36px;
 }
 
 .page-description-wrapper {
     width: 1200px;
     color: $white;
 }
+
+.bg-free {
+    background-image: url('../images/subscribe_1.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.bg-free {
+    background-image: url('../images/subscribe_1.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.bg-standart {
+    background-image: url('../images/subscribe_2.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.bg-premium {
+    background-image: url('../images/subscribe_3.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.pricing-item {
+    border-radius: 1rem;
+
+    > h3 {
+        font-weight: 400;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    > p {
+        font-style: normal;
+        color: $white;
+    }
+
+    > button {
+        border: 1px solid #FFFFFF;
+        border-radius: 5px;
+        > a {
+            color: $white;
+        }
+    }
+}
+
+.curr {
+    vertical-align: super;
+}
+
+.pricing-footer {
+    text-align: center; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @include desktop;
 @include mobile;

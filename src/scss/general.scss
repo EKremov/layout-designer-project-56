@@ -14,8 +14,7 @@
     #{$type}#{-$direction}: #{$size};
 }
 
-@mixin arial($color, $br) {
-    background-color: $color;
+@mixin arial($br) {
     font-family: Arial, sans-serif;
     font-style: normal;
     border-radius: #{$br}px;
