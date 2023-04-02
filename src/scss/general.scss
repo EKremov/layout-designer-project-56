@@ -32,8 +32,20 @@
             display: block;
         }
 
+        .brder-b {
+            box-sizing: border-box;
+        }
+
+        .pt-16 {
+            padding-top: 16px;
+        }
+
         .mr-0 {
             margin-right: 0;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
         }
 
         .logo {
@@ -45,12 +57,32 @@
             margin-top: 17px
         }
 
+        .mt-27 {
+            margin-top: 27px
+        }
+
         .mb-18 {
             margin-bottom: 18px;
         }
 
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
         .mb-24 {
             margin-bottom: 24px;
+        }
+
+        .mb-48 {
+            margin-bottom: 48px;
+        }
+
+        .mt-50 {
+            margin-top: 50px;
+        }
+
+        .mb-16 {
+            margin-bottom: 16px;
         }
 
         .search-form-input {
@@ -65,8 +97,16 @@
             font-size: 18px;
         }
 
+        .fs-16 {
+            font-size: 16px;
+        }
+
         .line-h-45 {
             line-height: 45px
+        }
+
+        .line-h-24 {
+            line-height: 24px
         }
 
         .line-h-27 {
@@ -100,6 +140,22 @@
 
         .first-section {
             width: 100%;
+        }
+
+        .page-pricing {
+            width: 100%;
+
+            > div {
+                flex-direction: column;
+            }
+        }
+
+        .page-news {
+            width: 100%;
+
+            > div {
+                flex-direction: column;
+            }
         }
     }
 }    
