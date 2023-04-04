@@ -37,3 +37,241 @@ $white: #fff;
 $absolute: absolute;
 $relative: relative;
 
+
+
+
+// Margins 
+
+.m-0 {
+    margin: 0px;
+}
+
+.mr-16 {
+    margin-right: 16px;
+}
+
+.mr-40 {
+    margin-right: 40px;
+}
+
+.mr-144 {
+    margin-right: 144px;
+}
+
+.mb-48 {
+    margin-bottom: 48px;
+}
+
+.mb-72 {
+    margin-bottom: 72px;
+}
+
+.mb-49 {
+    margin-bottom: 49px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.desk-mb-18 {
+    margin-bottom: 18px;
+}
+
+.mb-65 {
+    margin-bottom: 65px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mtb-64 {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mr-50 {
+    margin-right: 50px;
+}
+
+.mr-90 {
+    margin-right: 90px;
+}
+
+.mr-120 {
+    margin-right: 120px;
+}
+
+.ml-120 {
+    margin-left: 120px;
+}
+
+.mt-200 {
+    margin-top: 200px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mb-17 {
+    margin-bottom: 17px;
+}
+
+.mb-45 {
+    margin-bottom: 45px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-3rem {
+    margin-top: 3rem;
+}
+
+.mt-2rem {
+    margin-top: 2rem;
+}
+
+.mt-31 {
+    margin-top: 31px;
+}
+
+.mr-1-5 {
+    margin-right: 1.5rem;
+}
+
+.mb-1-5 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-200 {
+    margin-bottom: 200px;
+}
+
+
+// Paddings
+
+
+.p-0 {
+    padding: 0px;
+}
+
+.plr-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pl-10 {
+    padding-left: 10px;
+}
+
+.pl-20 {
+    padding-left: 10px;
+}
+
+.ptb-5 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.ptb-17 {
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+.ptb-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.ptb-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.plr-30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.plr-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.pr-93 {
+    padding-right: 93px;
+}
+
+.pt-100 {
+    padding-top: 101px;
+}
+
+.pl-16 {
+    padding-left: 16px;
+}
+
+.plr-1-5 {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.pt-1-5 {
+    padding-top: 1.5rem;
+}
+
+// Fonts 
+
+$font-size: 64, 56, 48, 40, 38, 32, 30, 24, 18, 16, 14, 13, 11;
+
+@mixin font-size($size) {
+    .fs-#{$size}{
+        font-size: #{$size}px;
+    }
+}
+@each $size in $font-size {
+    @include font-size($size);
+} 
+
+//line-h
+
+$line-heights: 15, 16, 19, 24, 27, 36, 45, 48, 57, 60, 72, 84, 90, 96; 
+
+@mixin line-heights($size) {
+    .line-h-#{$size} {
+        line-height: #{$size}px;
+    }
+}
+
+@each $size in $line-heights {
+    @include line-heights($size);
+}
+
+.line-h-1em {
+    line-height: 1em;
+}
+
+.line-h-1-5em {
+    line-height: 1.5em;
+}
+
+
+$mr: 16, 24, 50, 144
+$mt: 24,
+$mb: 15, 16, 24, 28, 30, 31, 40, 43, 48, 49, 45, 64, 72
+$mtb: 64,
